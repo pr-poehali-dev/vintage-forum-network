@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -59,6 +60,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen p-6 transition-colors duration-300">
+      <div className="absolute top-6 left-6 z-50">
+        <Link to="/auth">
+          <Button variant="outline">
+            <Icon name="LogIn" className="mr-2" size={18} />
+            Вход
+          </Button>
+        </Link>
+      </div>
+      
       <div className="absolute top-6 right-6 z-50">
         <Select value={theme} onValueChange={handleThemeChange}>
           <SelectTrigger className="w-[200px] bg-card">
